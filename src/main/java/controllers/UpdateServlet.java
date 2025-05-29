@@ -41,9 +41,6 @@ public class UpdateServlet extends HttpServlet {
             // 該当のIDのメッセージ1件のみをデータベースから取得
             Task m = em.find(Task.class, (Integer) (request.getSession().getAttribute("message_id")));
 
-            // フォームの内容を各フィールドに上書き
-            String title = request.getParameter("title");
-
             String content = request.getParameter("content");
             m.setContent(content);
 
